@@ -7,7 +7,11 @@ const axios = require('axios');
 const path = require('path');
 
 const app = express();
-
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type']
+}));
 // Middleware
 app.use(cors());
 app.use(express.json());
