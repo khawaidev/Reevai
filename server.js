@@ -83,10 +83,16 @@ async function analyzeContent(html) {
 
 // API Endpoints
 app.post('/api/scan', async (req, res) => {
+  console.log('Incoming POST /api/scan');
+  console.log('req.body:', req.body); // 🔍 this will show what's being received
+
   const { url, html } = req.body;
-  
+
   if (!url || !html) {
-    return res.status(400).json({ error: 'Missing required fields' });
+    return res.status(400).json({ 
+      error: 'Missing required fields',
+      received: req.body // show what was sent
+    });
   }
 
   try {
@@ -114,6 +120,7 @@ app.post('/api/scan', async (req, res) => {
     });
   }
 });
+
 
 app.get('/api/results', async (req, res) => {
   try {
