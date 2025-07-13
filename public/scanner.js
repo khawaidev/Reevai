@@ -3,7 +3,7 @@
 
   // Configuration
   const config = {
-    backendUrl: 'YOUR_RENDER_BACKEND_URL/api/scan',
+    backendUrl: 'https://reevai.onrender.com/api/scan',
     scanInterval: 30000, // 30 seconds
     maxHtmlLength: 10000, // characters
     minTextLength: 100, // minimum text to consider worth scanning
